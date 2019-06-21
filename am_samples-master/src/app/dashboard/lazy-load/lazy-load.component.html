@@ -1,0 +1,13 @@
+<div class="example_header">
+  
+  <div class="description">
+    Lazy load example:
+  </div>
+</div>
+<button (click)="getInfo()">GetInfo</button>
+
+<div *ngIf="mapService.isLoaded" class="container">
+  <am-map  [_id]="'map'" #maper>
+    <!--That's very important input, without this your map don't will be show-->
+  </am-map>
+</div>

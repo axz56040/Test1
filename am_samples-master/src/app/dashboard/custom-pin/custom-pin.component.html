@@ -1,0 +1,15 @@
+<div class="example_header">
+  
+  <div class="description">
+    Custom pin with popup
+  </div>
+</div>
+<button (click)="getInfo()">GetInfo</button>
+
+<div *ngIf="mapService.isLoaded" class="container">
+  <am-map  #maper [_id]="'map'"
+          [initialConfig]="config"
+          (loaded)="mapLoaded()">
+    <!--That's very important input, without this your map don't will be show-->
+  </am-map>
+</div>

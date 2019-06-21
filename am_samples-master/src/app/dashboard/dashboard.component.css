@@ -1,0 +1,45 @@
+.header_cnt {
+  text-align: center;
+  position: relative;
+  display: flex;
+  margin-left: 20rem
+  
+}
+
+.header {
+  height: 100px;
+	padding: 20;
+}
+
+.links {
+  position: fixed;
+}
+
+
+
+.header:after
+{
+  content:' ';
+  display:block;
+  border:2px solid #92c7e6;
+  background-color: powderblue;
+}
+
+
+.nav {
+  min-width: 10rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
+
+.content {
+  min-height: 10rem;
+  min-width: 10rem;
+  position: fixed;
+  margin-left: 19rem;
+}

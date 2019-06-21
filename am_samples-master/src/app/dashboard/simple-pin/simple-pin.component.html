@@ -1,0 +1,33 @@
+<div class="example_header">
+  
+  <div class="description">
+    Simple pin example:
+  </div>
+</div>
+<span>
+<button (click)="init()">Load Pins</button>
+<button (click)="updatePoints()">Update Pins</button>
+<button (click)="removePoints()">Remove Pins </button>
+</span>
+
+<div class="container"  *ngIf="mapService.isLoaded">
+  <am-map #maper
+          [initialConfig]="config"
+          [_id]="'id'"
+          (onMapClick)="getPos($event)">
+
+
+    <ng-template amPopup
+                 let-dataElement="dataElement">
+      <div [ngSwitch]="dataElement.type">
+        <div *ngSwitchCase="'DataCenter'" class="dc_container">
+          <div class="name">{{ dataElement.name}}</div>
+          <div class="status" [ngStyle]="{'color':dataElement.status === 'Online' ? 'blue' : 'red'}"> {{ dataElement.status }}</div>
+        </div>
+        <div *ngSwitchCase="'Office'" class="office_container">
+          <div class="name">{{ dataElement.name}}</div>
+        </div></div>
+    </ng-template>
+
+  </am-map>
+</div>

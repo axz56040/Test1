@@ -1,0 +1,16 @@
+<div class="example_header">
+  
+  <div class="description">
+    Lazy load example:
+  </div>
+</div>
+<button (click)="addHtml()">DEFAULT PIN</button>
+<span>ACTIVE HTML OBJECT: {{pinCounter}}</span>
+<button (click)="addMarker()">MARKER</button>
+<span>ACTIVE MARKER OBJECT: {{markerCounter}}</span>
+<button (click)="removeIntevals()">Remove intevals</button>
+
+<div *ngIf="mapService.isLoaded" class="container">
+  <am-map  [_id]="'map'" #maper>
+  </am-map>
+</div>
